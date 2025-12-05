@@ -1,0 +1,739 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 15.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
+  </style>
+</head>
+<body>
+<p class="p1"><b>Dental AI Audit Github</b></p>
+<p class="p2"><br></p>
+<p class="p3">&lt;!DOCTYPE html&gt;</p>
+<p class="p3">&lt;html lang="en"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3">&lt;head&gt;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;title&gt;NextGen Dental AI Audit&lt;/title&gt;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>background: linear-gradient(180deg, #0a1124 0%, #000000 100%);</p>
+<p class="p3"><span class="Apple-converted-space">            </span>color: #e5e7eb;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>.header-bar {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>background-color: #0a1124;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>border-bottom: 1px solid rgba(255, 255, 255, 0.08);</p>
+<p class="p3"><span class="Apple-converted-space">            </span>padding: 30px 0;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>.glass-card {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.04);</p>
+<p class="p3"><span class="Apple-converted-space">            </span>backdrop-filter: blur(12px);</p>
+<p class="p3"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255, 255, 255, 0.08);</p>
+<p class="p3"><span class="Apple-converted-space">            </span>border-radius: 16px;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>padding: 24px;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>.question-title {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>.next-btn {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>background: #1e40af;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>padding: 10px 28px;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>.next-btn:hover {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>background: #1d4ed8;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>.back-btn {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>background: #374151;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>padding: 10px 28px;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>.back-btn:hover {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>background: #4b5563;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>#progressBar {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>transition: width 0.4s ease;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>@media print {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>.no-print { display: none !important; }</p>
+<p class="p3"><span class="Apple-converted-space">            </span>body { background: white !important; color: black !important; }</p>
+<p class="p3"><span class="Apple-converted-space">            </span>.glass-card { background: white !important; border: 1px solid #ddd; }</p>
+<p class="p3"><span class="Apple-converted-space">        </span>}</p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p3">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p3">&lt;body class="min-h-screen"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;!-- ================= HEADER WITH LOGO ================= --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;header class="header-bar"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;img src="/assets/img/logo.jpeg" class="h-28 mx-auto object-contain mb-3"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;h1 class="text-3xl font-extrabold text-white tracking-wide"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>AI IMPLEMENTATION AUDIT</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;p class="text-blue-300 tracking-widest text-sm mt-2 uppercase"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>NextGen AI Business Solutions</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;div class="max-w-3xl mx-auto mt-10 p-4"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;!-- Progress Bar --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;div class="w-full bg-gray-700 h-3 rounded mb-8"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div id="progressBar" class="h-3 bg-blue-500 rounded" style="width:0%"&gt;&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;!-- FORM SECTION --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;div id="formSection"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 1 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;What is the name of your practice?&lt;/h2&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;input type="text" id="practiceName"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>placeholder="Example: Aguirre Family Dental"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-end mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 2 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;What type of dental practice is it?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="practiceType"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="general"&gt;General Dentistry&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="oral-surgery"&gt;Oral Surgery&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="perio"&gt;Periodontics&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="ortho"&gt;Orthodontics&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="peds"&gt;Pediatric&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 3 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How many locations does your practice have?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="locations"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="1"&gt;1&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="2"&gt;2&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="3"&gt;3&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="4"&gt;4+&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 4 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;What is your approximate monthly production?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;input type="number" id="monthlyProduction"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>placeholder="Example: 100000"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 5 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How many active patients do you have?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;input type="number" id="activePatients"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>placeholder="Example: 2000"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 6 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How many new patients do you see per month?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;input type="number" id="newPatientsPerMonth"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>placeholder="Example: 30"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 7 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;What practice management software do you use?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;input type="text" id="pmsSoftware"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>placeholder="Dentrix, OpenDental, Eaglesoft, etc."&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 8 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How many total staff members do you have?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;input type="number" id="staffCount"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"</p>
+<p class="p3"><span class="Apple-converted-space">                       </span>placeholder="Example: 8"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 9 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;What is your current appointment reminder system?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="appointmentReminders"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="manual"&gt;Manual calls only&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="basic"&gt;Basic automated (email/SMS)&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="advanced"&gt;Advanced automated w/ 2-way&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 10 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;Do you offer after-hours scheduling?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="afterHoursScheduling"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="no"&gt;No&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="voicemail"&gt;Voicemail only&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="online"&gt;Online booking&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="ai"&gt;AI voice assistant&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 11 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;What type of recall/recare system do you use?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="recallSystem"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="manual"&gt;Manual postcards/calls&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="inconsistent"&gt;Inconsistent automated&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="systematic"&gt;Systematic automated&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 12 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How do you deliver patient education?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="patientEducation"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="none"&gt;None/minimal&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="minimal"&gt;In-office only&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="basic"&gt;Basic email content&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="automated"&gt;Automated procedure-specific&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 13 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How do you generate online reviews?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="reviewGeneration"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="none"&gt;No system&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="manual"&gt;Manual requests&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="automated"&gt;Automated system&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 14 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How fast do you follow up with new patient leads?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="leadFollowUp"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="slow"&gt;24+ hours&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="inconsistent"&gt;Varies widely&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="fast"&gt;Within 1–2 hours&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="instant"&gt;Instant automated&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 15 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How do you follow up on unscheduled treatment plans?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="treatmentPlanFollowUp"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="poor"&gt;Rarely happens&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="inconsistent"&gt;Inconsistent&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="systematic"&gt;Systematic process&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 16 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How do you manage referral partner communication?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="referralManagement"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="poor"&gt;Minimal / ad hoc&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="manual"&gt;Manual tracking&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="systematic"&gt;Automated system&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 17 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;What is your current no-show rate?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="noShowRate"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="high"&gt;15%+&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="medium"&gt;8–15%&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="low"&gt;Under 8%&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 18 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;What describes your front desk staff turnover?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="frontDeskTurnover"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="high"&gt;High (frequent turnover)&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="moderate"&gt;Moderate&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="low"&gt;Low / stable team&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 19 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-10" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How would you describe your new staff training process?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="trainingProcess"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="informal"&gt;Informal / inconsistent&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="documented"&gt;Documented procedures&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="systematic"&gt;Systematic with support systems&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="nextStep()" class="next-btn"&gt;Next&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- ========== STEP 20 ========== --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="step glass-card mb-16" style="display:none"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h2 class="question-title mb-4"&gt;How would you describe the manual task load on your team?&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;select id="manualTaskLoad"</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>class="w-full p-3 rounded bg-gray-900 border border-gray-700 text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value=""&gt;Select...&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="overwhelming"&gt;Overwhelming — can't keep up&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="busy"&gt;Busy but manageable&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;option value="efficient"&gt;Efficient systems in place&lt;/option&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/select&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between mt-6 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="prevStep()" class="back-btn"&gt;Back&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;button onclick="generateReport()"</p>
+<p class="p3"><span class="Apple-converted-space">                            </span>class="next-btn bg-green-600 hover:bg-green-700"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>Generate My AI Plan</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;/div&gt; &lt;!-- END formSection --&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;div id="resultsSection" style="display:none;"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>&lt;/div&gt; &lt;!-- END main container --&gt;</p>
+<p class="p3">&lt;!-- ========================= --&gt;</p>
+<p class="p3">&lt;!-- MULTI-STEP CONTROLLER JS --&gt;</p>
+<p class="p3">&lt;!-- ========================= --&gt;</p>
+<p class="p3">&lt;script&gt;</p>
+<p class="p3">let currentStep = 0;</p>
+<p class="p2"><br></p>
+<p class="p3">function showStep(i) {</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const steps = document.querySelectorAll('.step');</p>
+<p class="p3"><span class="Apple-converted-space">    </span>steps.forEach((step, index) =&gt; {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>step.style.display = index === i ? 'block' : 'none';</p>
+<p class="p3"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>const progress = ((i + 1) / steps.length) * 100;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>document.getElementById('progressBar').style.width = progress + "%";</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>window.scrollTo({ top: 0, behavior: 'smooth' });</p>
+<p class="p3">}</p>
+<p class="p2"><br></p>
+<p class="p3">function nextStep() {</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const steps = document.querySelectorAll('.step');</p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (currentStep &lt; steps.length - 1) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>currentStep++;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>showStep(currentStep);</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3">}</p>
+<p class="p2"><br></p>
+<p class="p3">function prevStep() {</p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (currentStep &gt; 0) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>currentStep--;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>showStep(currentStep);</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p3">}</p>
+<p class="p2"><br></p>
+<p class="p3">document.addEventListener("DOMContentLoaded", () =&gt; showStep(0));</p>
+<p class="p3">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p3">&lt;!-- ========================= --&gt;</p>
+<p class="p3">&lt;!-- GENERATE REPORT FUNCTION --&gt;</p>
+<p class="p3">&lt;!-- ========================= --&gt;</p>
+<p class="p3">&lt;script&gt;</p>
+<p class="p3">function generateReport() {</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// Collect all inputs</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const data = {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>practiceName: document.getElementById('practiceName').value || "Your Practice",</p>
+<p class="p3"><span class="Apple-converted-space">        </span>practiceType: document.getElementById('practiceType').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>locations: parseInt(document.getElementById('locations').value) || 1,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>monthlyProduction: parseInt(document.getElementById('monthlyProduction').value) || 100000,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>activePatients: parseInt(document.getElementById('activePatients').value) || 2000,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>newPatientsPerMonth: parseInt(document.getElementById('newPatientsPerMonth').value) || 30,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>pmsSoftware: document.getElementById('pmsSoftware').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>staffCount: parseInt(document.getElementById('staffCount').value) || 8,</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>appointmentReminders: document.getElementById('appointmentReminders').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>afterHoursScheduling: document.getElementById('afterHoursScheduling').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>recallSystem: document.getElementById('recallSystem').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>patientEducation: document.getElementById('patientEducation').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>reviewGeneration: document.getElementById('reviewGeneration').value,</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>leadFollowUp: document.getElementById('leadFollowUp').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>treatmentPlanFollowUp: document.getElementById('treatmentPlanFollowUp').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>referralManagement: document.getElementById('referralManagement').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>noShowRate: document.getElementById('noShowRate').value,</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>frontDeskTurnover: document.getElementById('frontDeskTurnover').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>trainingProcess: document.getElementById('trainingProcess').value,</p>
+<p class="p3"><span class="Apple-converted-space">        </span>manualTaskLoad: document.getElementById('manualTaskLoad').value</p>
+<p class="p3"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// Recommendations engine</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const recs = { phase1: [], phase2: [], phase3: [] };</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// === Phase 1 – Foundation ===</p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (["manual","basic"].includes(data.appointmentReminders)) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>recs.phase1.push({</p>
+<p class="p3"><span class="Apple-converted-space">            </span>name: "Automated Appointment Reminders",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>description: "AI-driven SMS/email reminders with 2-way sync.",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>impact: "Reduces no-shows 25–35%"</p>
+<p class="p3"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (["no","voicemail"].includes(data.afterHoursScheduling)) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>recs.phase1.push({</p>
+<p class="p3"><span class="Apple-converted-space">            </span>name: "AI 24/7 Scheduling Assistant",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>description: "Enables after-hours booking without staff.",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>impact: "15–20% more appointments captured"</p>
+<p class="p3"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (["manual","inconsistent"].includes(data.recallSystem)) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>recs.phase1.push({</p>
+<p class="p3"><span class="Apple-converted-space">            </span>name: "Automated Recall System",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>description: "Hygiene and recare reminders sent automatically.",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>impact: "Boosts recall visits 30–40%"</p>
+<p class="p3"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// === Phase 2 – Growth ===</p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (["poor","inconsistent"].includes(data.treatmentPlanFollowUp)) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>recs.phase2.push({</p>
+<p class="p3"><span class="Apple-converted-space">            </span>name: "Treatment Follow-Up Automation",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>description: "Automated sequences for unscheduled treatment.",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>impact: "Improves case acceptance 20–25%"</p>
+<p class="p3"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (["minimal","none","basic"].includes(data.patientEducation)) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>recs.phase2.push({</p>
+<p class="p3"><span class="Apple-converted-space">            </span>name: "Automated Patient Education",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>description: "AI sends procedure-specific explanations.",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>impact: "Improves acceptance &amp; reduces patient anxiety"</p>
+<p class="p3"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (["none","manual"].includes(data.reviewGeneration)) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>recs.phase2.push({</p>
+<p class="p3"><span class="Apple-converted-space">            </span>name: "Review Generation System",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>description: "Automated review requests after visits.",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>impact: "Adds 40–60 reviews annually"</p>
+<p class="p3"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (["slow","inconsistent"].includes(data.leadFollowUp)) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>recs.phase2.push({</p>
+<p class="p3"><span class="Apple-converted-space">            </span>name: "AI Lead Follow-Up Automation",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>description: "Instant responses + multi-message nurturing.",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>impact: "Converts 30% more patient inquiries"</p>
+<p class="p3"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// === Phase 3 – Optimization ===</p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (["poor","manual"].includes(data.referralManagement)) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>recs.phase3.push({</p>
+<p class="p3"><span class="Apple-converted-space">            </span>name: "Referral Partner Automation",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>description: "AI automates referral communication &amp; updates.",</p>
+<p class="p3"><span class="Apple-converted-space">            </span>impact: "Strengthens specialist relationships"</p>
+<p class="p3"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// Always included</p>
+<p class="p3"><span class="Apple-converted-space">    </span>recs.phase3.push({</p>
+<p class="p3"><span class="Apple-converted-space">        </span>name: "Performance Analytics Dashboard",</p>
+<p class="p3"><span class="Apple-converted-space">        </span>description: "Real-time reporting, KPIs &amp; revenue tracking.",</p>
+<p class="p3"><span class="Apple-converted-space">        </span>impact: "Gives data-driven clarity"</p>
+<p class="p3"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// Calculate totals &amp; ROI</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const totalFeatures = recs.phase1.length + recs.phase2.length + recs.phase3.length;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>let monthlyFee, packageName;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>if (totalFeatures &lt;= 4) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>monthlyFee = 797 * data.locations;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>packageName = "Starter Package";</p>
+<p class="p3"><span class="Apple-converted-space">    </span>} else if (totalFeatures &lt;= 7) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>monthlyFee = 1497 * data.locations;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>packageName = "Growth Package";</p>
+<p class="p3"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>monthlyFee = 2297 * data.locations;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>packageName = "Complete System";</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>const setupFee = 1500 * data.locations;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const totalFirstMonth = setupFee + monthlyFee;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>const estimatedIncrease = totalFeatures * 0.03; // 3% per improvement</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const projectedMonthlyIncrease = Math.round(data.monthlyProduction * estimatedIncrease);</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const projectedAnnualIncrease = projectedMonthlyIncrease * 12;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const annualInvestment = monthlyFee * 12;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>const roi = Math.round(((projectedAnnualIncrease - annualInvestment) / annualInvestment) * 100);</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// =============================</p>
+<p class="p3"><span class="Apple-converted-space">    </span>// BUILD REPORT HTML</p>
+<p class="p3"><span class="Apple-converted-space">    </span>// =============================</p>
+<p class="p3"><span class="Apple-converted-space">    </span>let html = `</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;div class="glass-card p-6 mt-8"&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-bold text-blue-400 mb-4"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>${data.practiceName} — AI Implementation Plan</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- Package Summary --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="grid md:grid-cols-3 gap-6 mb-8"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm"&gt;Recommended Package&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;p class="text-xl font-bold text-white"&gt;${packageName}&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm"&gt;Estimated Timeline&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;p class="text-xl font-bold text-white"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                        </span>${totalFeatures &lt;= 4 ? "3–4 weeks" : totalFeatures &lt;= 7 ? "6–8 weeks" : "10–12 weeks"}</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-400 text-sm"&gt;Projected Annual ROI&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;p class="text-xl font-bold text-green-400"&gt;${roi}%&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- Revenue Projection --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="glass-card p-6 border border-green-700 mb-8"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h3 class="text-xl font-semibold text-green-300 mb-4"&gt;Revenue Impact Projection&lt;/h3&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;p class="text-green-400 text-3xl font-bold"&gt;$${projectedMonthlyIncrease.toLocaleString()} / month&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;p class="text-green-400 text-xl font-bold mt-2"&gt;$${projectedAnnualIncrease.toLocaleString()} / year&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;!-- PHASES --&gt;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>`;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>function phaseSection(title, color, items) {</p>
+<p class="p3"><span class="Apple-converted-space">        </span>if (!items.length) return "";</p>
+<p class="p3"><span class="Apple-converted-space">        </span>let section = `</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;div class="glass-card p-6 mb-8 border-l-4 border-${color}-400"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;h3 class="text-xl font-bold text-${color}-300 mb-4"&gt;${title}&lt;/h3&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>`;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>items.forEach(item =&gt; {</p>
+<p class="p3"><span class="Apple-converted-space">            </span>section += `</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;div class="mb-4 bg-gray-900 p-4 rounded border border-gray-700"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;p class="text-lg font-semibold text-white"&gt;${item.name}&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 text-sm"&gt;${item.description}&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                    </span>&lt;p class="text-${color}-300 text-sm mt-1"&gt;📈 ${item.impact}&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>});</p>
+<p class="p3"><span class="Apple-converted-space">        </span>return section + "&lt;/div&gt;";</p>
+<p class="p3"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>html += phaseSection("Phase 1 — Foundation", "blue", recs.phase1);</p>
+<p class="p3"><span class="Apple-converted-space">    </span>html += phaseSection("Phase 2 — Growth", "purple", recs.phase2);</p>
+<p class="p3"><span class="Apple-converted-space">    </span>html += phaseSection("Phase 3 — Optimization", "orange", recs.phase3);</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// Investment Summary</p>
+<p class="p3"><span class="Apple-converted-space">    </span>html += `</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;div class="glass-card p-6 border border-gray-600"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;h3 class="text-2xl font-bold text-white mb-4"&gt;Investment Summary&lt;/h3&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-300 mb-2"&gt;Setup Fee: &lt;span class="text-white font-bold"&gt;$${setupFee.toLocaleString()}&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-300 mb-2"&gt;Monthly Fee: &lt;span class="text-white font-bold"&gt;$${monthlyFee.toLocaleString()}&lt;/span&gt;&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;p class="text-xl text-green-400 font-bold mt-4"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">                </span>Total First Month: $${totalFirstMonth.toLocaleString()}</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;div class="mt-6 flex gap-4 no-print"&gt;</p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;button onclick="window.print()"<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="Apple-converted-space">                </span>class="next-btn bg-green-600 hover:bg-green-700 flex-1"&gt;Print / Save as PDF&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">            </span>&lt;button onclick="resetForm()"<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="Apple-converted-space">                </span>class="back-btn flex-1"&gt;Start New Audit&lt;/button&gt;</p>
+<p class="p3"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>`;</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>// Display report</p>
+<p class="p3"><span class="Apple-converted-space">    </span>document.getElementById('formSection').style.display = "none";</p>
+<p class="p3"><span class="Apple-converted-space">    </span>const results = document.getElementById('resultsSection');</p>
+<p class="p3"><span class="Apple-converted-space">    </span>results.innerHTML = html;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>results.style.display = "block";</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space">    </span>window.scrollTo({ top: 0, behavior: "smooth" });</p>
+<p class="p3">}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p3">// Reset the audit</p>
+<p class="p3">function resetForm() {</p>
+<p class="p3"><span class="Apple-converted-space">    </span>document.getElementById('resultsSection').style.display = "none";</p>
+<p class="p3"><span class="Apple-converted-space">    </span>document.getElementById('formSection').style.display = "block";</p>
+<p class="p3"><span class="Apple-converted-space">    </span>currentStep = 0;</p>
+<p class="p3"><span class="Apple-converted-space">    </span>showStep(0);</p>
+<p class="p3">}</p>
+<p class="p3">&lt;/script&gt;</p>
+<p class="p3">&lt;/body&gt;</p>
+<p class="p3">&lt;/html&gt;</p>
+</body>
+</html>
