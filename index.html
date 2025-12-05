@@ -1,169 +1,780 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NextGen Dental AI Audit</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-        body {
-            background: linear-gradient(180deg, #0a1124 0%, #000000 100%);
-            color: #e5e7eb;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 24px;
-            backdrop-filter: blur(12px);
-        }
-
-        .next-btn {
-            background: #1e40af;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 10px;
-            font-weight: 600;
-        }
-
-        .next-btn:hover {
-            background: #1d4ed8;
-        }
-
-        .back-btn {
-            background: #374151;
-            color: white;
-            padding: 10px 24px;
-            border-radius: 10px;
-            font-weight: 500;
-        }
-
-        .back-btn:hover {
-            background: #4b5563;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextGen Dental AI Audit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(180deg, #0a1124 0%, #000000 100%);
+      color: #e5e7eb;
+      font-family: 'Inter', sans-serif;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 18px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+    }
+    .primary-btn {
+      background: #1e40af;
+      color: #ffffff;
+      padding: 10px 26px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .primary-btn:hover {
+      background: #1d4ed8;
+    }
+    .secondary-btn {
+      background: #374151;
+      color: #ffffff;
+      padding: 8px 22px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .secondary-btn:hover {
+      background: #4b5563;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 
-<body class="p-6">
-
-    <div class="max-w-2xl mx-auto mt-10">
-        <h1 class="text-3xl font-bold text-center mb-8 text-blue-400">
-            NextGen Dental AI Audit
-        </h1>
-
-        <!-- STEP CONTAINER -->
-        <div id="audit-container">
-
-            <!-- STEP 1 -->
-            <div class="glass-card" id="step-1">
-                <h2 class="text-xl font-semibold mb-4">1. Practice Information</h2>
-
-                <label class="block mb-3">
-                    <span class="text-gray-300">Practice Name</span>
-                    <input
-                        type="text"
-                        class="mt-1 w-full p-2 rounded bg-gray-800 border border-gray-600 text-white"
-                    />
-                </label>
-
-                <label class="block mb-3">
-                    <span class="text-gray-300">Your Name</span>
-                    <input
-                        type="text"
-                        class="mt-1 w-full p-2 rounded bg-gray-800 border border-gray-600 text-white"
-                    />
-                </label>
-
-                <button class="next-btn mt-4" onclick="nextStep(2)">Next</button>
-            </div>
-
-            <!-- STEP 2 -->
-            <div class="glass-card hidden" id="step-2">
-                <h2 class="text-xl font-semibold mb-4">
-                    2. How automated is your front desk today?
-                </h2>
-
-                <select class="w-full p-2 mt-2 rounded bg-gray-800 border border-gray-600 text-white">
-                    <option>We handle everything manually</option>
-                    <option>We use basic reminders</option>
-                    <option>Some automation, but inconsistent</option>
-                    <option>Highly automated</option>
-                </select>
-
-                <div class="flex justify-between mt-6">
-                    <button class="back-btn" onclick="nextStep(1)">Back</button>
-                    <button class="next-btn" onclick="nextStep(3)">Next</button>
-                </div>
-            </div>
-
-            <!-- STEP 3 -->
-            <div class="glass-card hidden" id="step-3">
-                <h2 class="text-xl font-semibold mb-4">
-                    3. How do you manage patient recalls & follow-ups?
-                </h2>
-
-                <select class="w-full p-2 mt-2 rounded bg-gray-800 border border-gray-600 text-white">
-                    <option>We call manually</option>
-                    <option>We use text reminders</option>
-                    <option>Automated recall + text + email</option>
-                </select>
-
-                <div class="flex justify-between mt-6">
-                    <button class="back-btn" onclick="nextStep(2)">Back</button>
-                    <button class="next-btn" onclick="nextStep(4)">Next</button>
-                </div>
-            </div>
-
-            <!-- STEP 4 -->
-            <div class="glass-card hidden" id="step-4">
-                <h2 class="text-xl font-semibold mb-4">
-                    4. Are you currently using AI for any workflows?
-                </h2>
-
-                <select class="w-full p-2 mt-2 rounded bg-gray-800 border border-gray-600 text-white">
-                    <option>No</option>
-                    <option>Yes — only for patient messages</option>
-                    <option>Yes — front desk + insurance verification</option>
-                    <option>Yes — full operations automation</option>
-                </select>
-
-                <div class="flex justify-between mt-6">
-                    <button class="back-btn" onclick="nextStep(3)">Back</button>
-                    <button class="next-btn" onclick="nextStep(5)">Next</button>
-                </div>
-            </div>
-
-            <!-- STEP 5 (FINAL) -->
-            <div class="glass-card hidden" id="step-5">
-                <h2 class="text-xl font-semibold mb-4">Audit Completed</h2>
-                <p class="mb-4 text-gray-300">
-                    Thank you! Your responses help us determine your automation readiness score.
-                </p>
-
-                <p class="text-blue-400 font-semibold mb-4">
-                    A NextGen AI strategist will review your answers and contact you with a personalized report.
-                </p>
-
-                <button class="back-btn" onclick="nextStep(4)">Back</button>
-            </div>
-        </div>
+<body class="p-4 sm:p-6">
+  <div class="max-w-3xl mx-auto mt-6 sm:mt-10">
+    <!-- Header -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-blue-400 tracking-tight">
+        NextGen Dental AI Audit
+      </h1>
+      <p class="mt-2 text-sm sm:text-base text-gray-300">
+        5-Pillar Framework for AI-Ready Practice Growth
+      </p>
     </div>
 
-    <script>
-        function nextStep(step) {
-            const steps = document.querySelectorAll('[id^="step-"]');
-            steps.forEach(div => div.classList.add("hidden"));
-            document.getElementById(`step-${step}`).classList.remove("hidden");
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-    </script>
+    <!-- Progress -->
+    <div class="mb-4">
+      <div class="flex justify-between items-center mb-1">
+        <span class="text-xs sm:text-sm text-gray-300">
+          Step <span id="current-step">1</span> of <span id="total-steps">26</span>
+        </span>
+        <span id="current-pillar" class="text-xs sm:text-sm text-yellow-300 font-medium">
+          Practice Info
+        </span>
+      </div>
+      <div class="w-full bg-gray-800 rounded-full h-2">
+        <div id="progress-bar" class="bg-blue-500 h-2 rounded-full" style="width: 4%;"></div>
+      </div>
+    </div>
 
+    <!-- Wizard Container -->
+    <div id="audit-container" class="space-y-4">
+
+      <!-- STEP 1: Practice Info -->
+      <div id="step-1" class="glass-card">
+        <h2 class="text-xl font-semibold mb-3">Practice Information</h2>
+        <p class="text-sm text-gray-300 mb-4">
+          Tell us a little about your practice so we can personalize your AI roadmap.
+        </p>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <label class="block text-sm">
+            <span class="text-gray-200">Practice Name</span>
+            <input name="practice_name" data-question
+                   class="mt-1 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm"
+                   type="text" />
+          </label>
+
+          <label class="block text-sm">
+            <span class="text-gray-200">Your Name</span>
+            <input name="contact_name" data-question
+                   class="mt-1 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm"
+                   type="text" />
+          </label>
+
+          <label class="block text-sm">
+            <span class="text-gray-200">Email</span>
+            <input name="contact_email" data-question
+                   class="mt-1 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm"
+                   type="email" />
+          </label>
+
+          <label class="block text-sm">
+            <span class="text-gray-200">Phone</span>
+            <input name="contact_phone" data-question
+                   class="mt-1 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm"
+                   type="tel" />
+          </label>
+
+          <label class="block text-sm sm:col-span-2">
+            <span class="text-gray-200">Your Role</span>
+            <select name="contact_role" data-question
+                    class="mt-1 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+              <option value="">Select role</option>
+              <option>Dentist / Owner</option>
+              <option>Associate Dentist</option>
+              <option>Office Manager</option>
+              <option>Treatment Coordinator</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="flex justify-end mt-6">
+          <button class="primary-btn text-sm" onclick="goToStep(2)">Next</button>
+        </div>
+      </div>
+
+      <!-- PILLAR 1 — AI Visibility Engine™ -->
+      <!-- STEP 2 -->
+      <div id="step-2" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 1 — AI Visibility Engine™</h2>
+        <p class="text-sm text-gray-300 mb-4">
+          How visible is your practice online today?
+        </p>
+        <label class="block text-sm">
+          <span class="text-gray-200">1. How visible is your practice on Google Search today?</span>
+          <select name="p1_q1_visibility_level" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>We rarely show up on page 1</option>
+            <option>We sometimes appear for name-based searches</option>
+            <option>We appear for some procedure/keyword searches</option>
+            <option>We consistently rank well for key terms</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(1)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(3)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div id="step-3" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 1 — AI Visibility Engine™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">2. Do you currently use AI-assisted SEO or content tools?</span>
+          <select name="p1_q2_ai_seo" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No, we don’t use any AI tools for SEO/content</option>
+            <option>We’ve experimented but not consistently</option>
+            <option>We occasionally use AI to help with blogs/social</option>
+            <option>We regularly use AI for SEO and content strategy</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(2)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(4)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div id="step-4" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 1 — AI Visibility Engine™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">3. How often do you post on your Google Business Profile?</span>
+          <select name="p1_q3_gbp_posts" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>We rarely/never post</option>
+            <option>We post a few times per year</option>
+            <option>We post monthly</option>
+            <option>We post weekly or more</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(3)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(5)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div id="step-5" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 1 — AI Visibility Engine™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            4. Do you have automated content or social scheduling in place?
+          </span>
+          <select name="p1_q4_scheduling" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No, everything is manual and irregular</option>
+            <option>We have tools but don’t use them consistently</option>
+            <option>We schedule some recurring content</option>
+            <option>We run a consistent, automated content calendar</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(4)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(6)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 6 -->
+      <div id="step-6" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 1 — AI Visibility Engine™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            5. How is your online reputation (reviews) monitored today?
+          </span>
+          <select name="p1_q5_reviews" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>We don’t really monitor or respond to reviews</option>
+            <option>We occasionally check and respond manually</option>
+            <option>We have someone assigned to manage reviews</option>
+            <option>We use tools/automation to request & manage reviews</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(5)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(7)">Next</button>
+        </div>
+      </div>
+
+      <!-- PILLAR 2 — AI Patient Experience Automator™ -->
+      <!-- STEP 7 -->
+      <div id="step-7" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 2 — AI Patient Experience Automator™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            1. On average, how many calls does your front desk handle daily?
+          </span>
+          <select name="p2_q1_call_volume" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>Fewer than 25 calls per day</option>
+            <option>25–50 calls per day</option>
+            <option>50–100 calls per day</option>
+            <option>More than 100 calls per day</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(6)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(8)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 8 -->
+      <div id="step-8" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 2 — AI Patient Experience Automator™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            2. Do you use AI or chatbots for patient intake or FAQs?
+          </span>
+          <select name="p2_q2_ai_intake" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No, intake is entirely manual</option>
+            <option>We use simple web forms</option>
+            <option>We use basic chat or automated responses</option>
+            <option>We use an AI assistant for intake & FAQs</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(7)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(9)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 9 -->
+      <div id="step-9" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 2 — AI Patient Experience Automator™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            3. Are appointment confirmations automated?
+          </span>
+          <select name="p2_q3_confirmations" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No, we call every patient manually</option>
+            <option>We send manual texts/emails</option>
+            <option>We use basic automated reminders</option>
+            <option>We have fully automated, multi-channel confirmations</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(8)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(10)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 10 -->
+      <div id="step-10" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 2 — AI Patient Experience Automator™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            4. Are recalls/reactivations automated (text/email)?
+          </span>
+          <select name="p2_q4_recalls" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No recall system in place</option>
+            <option>We manually run recall lists</option>
+            <option>We have some automated recall messaging</option>
+            <option>We have a fully automated recall/reactivation system</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(9)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(11)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 11 -->
+      <div id="step-11" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 2 — AI Patient Experience Automator™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            5. Is insurance verification partially or fully automated?
+          </span>
+          <select name="p2_q5_insurance" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>We verify everything manually by phone/fax</option>
+            <option>We use portals, but it’s still mostly manual</option>
+            <option>We have tools that speed up verification</option>
+            <option>We use automated/AI-driven insurance verification</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(10)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(12)">Next</button>
+        </div>
+      </div>
+
+      <!-- PILLAR 3 — AI Operations Command Center™ -->
+      <!-- STEP 12 -->
+      <div id="step-12" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 3 — AI Operations Command Center™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            1. Do you currently track key KPIs (production, collections, new patients) in real time?
+          </span>
+          <select name="p3_q1_kpis" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No, we mostly look at reports end of month</option>
+            <option>We review numbers occasionally during the month</option>
+            <option>We have dashboards but don’t use them consistently</option>
+            <option>We review real-time dashboards regularly</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(11)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(13)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 13 -->
+      <div id="step-13" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 3 — AI Operations Command Center™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            2. Are workflows automated across front and back office?
+          </span>
+          <select name="p3_q2_workflows" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No, everything is handled manually</option>
+            <option>Some tasks are automated or templated</option>
+            <option>We have partially automated workflows</option>
+            <option>We run most admin workflows through automation</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(12)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(14)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 14 -->
+      <div id="step-14" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 3 — AI Operations Command Center™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            3. Do you use dashboards for AR, production, and case conversion?
+          </span>
+          <select name="p3_q3_dashboards" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No dashboards in place</option>
+            <option>We have reports but no true dashboards</option>
+            <option>We have dashboards but use them occasionally</option>
+            <option>We actively manage from dashboards daily/weekly</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(13)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(15)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 15 -->
+      <div id="step-15" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 3 — AI Operations Command Center™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            4. Are admin tasks (tasks, reminders, routing) automated or tracked systematically?
+          </span>
+          <select name="p3_q4_admin_tasks" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>Most tasks are verbal/handwritten</option>
+            <option>We have some tracking but no automation</option>
+            <option>Tasks are partially automated and tracked</option>
+            <option>We use structured, automated task management</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(14)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(16)">Next</button>
+        </div>
+      </div>
+
+      <!-- PILLAR 4 — AI Revenue Multiplier Blueprint™ -->
+      <!-- STEP 16 -->
+      <div id="step-16" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 4 — AI Revenue Multiplier Blueprint™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            1. Do you currently run targeted patient campaigns (implants, whitening, Invisalign, etc.)?
+          </span>
+          <select name="p4_q1_campaigns" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No targeted campaigns</option>
+            <option>Occasional one-off campaigns</option>
+            <option>We run some recurring campaigns</option>
+            <option>We run ongoing, segmented campaigns</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(15)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(17)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 17 -->
+      <div id="step-17" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 4 — AI Revenue Multiplier Blueprint™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            2. Are unscheduled treatment plans followed up automatically?
+          </span>
+          <select name="p4_q2_unscheduled" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No formal follow-up system</option>
+            <option>Manual follow-up when we have time</option>
+            <option>Some automated reminders for unscheduled treatment</option>
+            <option>Fully automated multi-touch follow-up campaigns</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(16)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(18)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 18 -->
+      <div id="step-18" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 4 — AI Revenue Multiplier Blueprint™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            3. Do you run implant or high-value procedure campaigns consistently?
+          </span>
+          <select name="p4_q3_implant_campaigns" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No, we don’t run these campaigns</option>
+            <option>We occasionally promote high-value procedures</option>
+            <option>We run some structured campaigns during the year</option>
+            <option>We have ongoing, optimized campaigns for high-value services</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(17)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(19)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 19 -->
+      <div id="step-19" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 4 — AI Revenue Multiplier Blueprint™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            4. Is your membership plan tracked and automated?
+          </span>
+          <select name="p4_q4_membership" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>We don’t have a membership plan</option>
+            <option>We have a plan but track it manually</option>
+            <option>We use software but not fully automated</option>
+            <option>Our membership plan is fully automated & monitored</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(18)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(20)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 20 -->
+      <div id="step-20" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 4 — AI Revenue Multiplier Blueprint™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            5. Is case acceptance supported with digital/AI tools (presentations, financing, follow-up)?
+          </span>
+          <select name="p4_q5_case_acceptance" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No, we mainly present treatment verbally</option>
+            <option>We use some digital tools or printed estimates</option>
+            <option>We have structured presentations & basic follow-up</option>
+            <option>We use digital/AI tools and automated follow-up workflows</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(19)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(21)">Next</button>
+        </div>
+      </div>
+
+      <!-- PILLAR 5 — AI Compliance & Continuity Shield™ -->
+      <!-- STEP 21 -->
+      <div id="step-21" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 5 — AI Compliance & Continuity Shield™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            1. Do you have cybersecurity monitoring or protection in place?
+          </span>
+          <select name="p5_q1_cybersecurity" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>We are not sure what is in place</option>
+            <option>We rely on basic antivirus or IT support</option>
+            <option>We have defined cybersecurity tools/policies</option>
+            <option>We have proactive monitoring and response plans</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(20)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(22)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 22 -->
+      <div id="step-22" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 5 — AI Compliance & Continuity Shield™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            2. Are HIPAA workflows documented and followed for digital tools?
+          </span>
+          <select name="p5_q2_hipaa" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No formal documentation</option>
+            <option>We have policies but they’re not consistently followed</option>
+            <option>We have documented workflows for most tools</option>
+            <option>We have fully documented, enforced HIPAA workflows</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(21)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(23)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 23 -->
+      <div id="step-23" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 5 — AI Compliance & Continuity Shield™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            3. Is staff AI usage governed by clear policies or guidelines?
+          </span>
+          <select name="p5_q3_ai_policy" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No, staff uses tools as they see fit</option>
+            <option>We’ve discussed guidelines but not documented them</option>
+            <option>We have basic written guidelines</option>
+            <option>We have detailed policies, training, and monitoring</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(22)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(24)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 24 -->
+      <div id="step-24" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 5 — AI Compliance & Continuity Shield™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            4. Do you have a continuity plan if key staff leave or are unavailable?
+          </span>
+          <select name="p5_q4_continuity" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>No formal continuity plan</option>
+            <option>Some processes documented but not comprehensive</option>
+            <option>We have a continuity plan for key roles</option>
+            <option>We have a robust, tested continuity and cross-training plan</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(23)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(25)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 25 -->
+      <div id="step-25" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Pillar 5 — AI Compliance & Continuity Shield™</h2>
+        <label class="block text-sm">
+          <span class="text-gray-200">
+            5. Do you regularly back up key data, systems, and workflows?
+          </span>
+          <select name="p5_q5_backups" data-question
+                  class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm">
+            <option value="">Select one</option>
+            <option>We’re not sure how or if backups are done</option>
+            <option>Backups are done occasionally</option>
+            <option>Backups are done regularly but not tested</option>
+            <option>We have regular, tested backups & recovery procedures</option>
+          </select>
+        </label>
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(24)">Back</button>
+          <button class="primary-btn text-sm" onclick="goToStep(26)">Next</button>
+        </div>
+      </div>
+
+      <!-- STEP 26 — Final / Submit -->
+      <div id="step-26" class="glass-card hidden">
+        <h2 class="text-xl font-semibold mb-3">Review & Submit Your Audit</h2>
+        <p class="text-sm text-gray-300 mb-4">
+          Thank you for completing the NextGen Dental AI Audit. If you’d like to add any notes or priorities,
+          include them below. When you click <span class="font-semibold text-blue-300">Submit Audit</span>,
+          your responses will open in your email app addressed to
+          <span class="font-semibold text-yellow-300">businessmogul2025@gmail.com</span>.
+        </p>
+
+        <label class="block text-sm mb-4">
+          <span class="text-gray-200">Additional notes, goals, or priorities:</span>
+          <textarea name="additional_notes" data-question
+                    class="mt-2 w-full p-2 rounded bg-gray-900 border border-gray-700 text-sm"
+                    rows="4"
+                    placeholder="Example: We want to grow implants by 30%, reduce front desk burnout, improve case acceptance, etc."></textarea>
+        </label>
+
+        <div class="flex justify-between mt-6">
+          <button class="secondary-btn text-sm" onclick="goToStep(25)">Back</button>
+          <button class="primary-btn text-sm" onclick="submitAudit()">Submit Audit</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const totalSteps = 26;
+    const pillarLabels = {
+      1: "Practice Info",
+      2: "Pillar 1 — Visibility",
+      3: "Pillar 1 — Visibility",
+      4: "Pillar 1 — Visibility",
+      5: "Pillar 1 — Visibility",
+      6: "Pillar 1 — Visibility",
+      7: "Pillar 2 — Patient Experience",
+      8: "Pillar 2 — Patient Experience",
+      9: "Pillar 2 — Patient Experience",
+      10: "Pillar 2 — Patient Experience",
+      11: "Pillar 2 — Patient Experience",
+      12: "Pillar 3 — Operations",
+      13: "Pillar 3 — Operations",
+      14: "Pillar 3 — Operations",
+      15: "Pillar 3 — Operations",
+      16: "Pillar 4 — Revenue",
+      17: "Pillar 4 — Revenue",
+      18: "Pillar 4 — Revenue",
+      19: "Pillar 4 — Revenue",
+      20: "Pillar 4 — Revenue",
+      21: "Pillar 5 — Compliance",
+      22: "Pillar 5 — Compliance",
+      23: "Pillar 5 — Compliance",
+      24: "Pillar 5 — Compliance",
+      25: "Pillar 5 — Compliance",
+      26: "Review & Submit"
+    };
+
+    document.getElementById("total-steps").textContent = totalSteps;
+
+    function goToStep(step) {
+      for (let i = 1; i <= totalSteps; i++) {
+        const el = document.getElementById(`step-${i}`);
+        if (el) el.classList.add("hidden");
+      }
+      const current = document.getElementById(`step-${step}`);
+      if (current) current.classList.remove("hidden");
+
+      document.getElementById("current-step").textContent = step;
+      const progressPercent = (step / totalSteps) * 100;
+      document.getElementById("progress-bar").style.width = progressPercent + "%";
+      document.getElementById("current-pillar").textContent = pillarLabels[step] || "";
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function submitAudit() {
+      const fields = document.querySelectorAll("[data-question]");
+      let bodyLines = [];
+
+      bodyLines.push("New NextGen Dental AI Audit Submission");
+      bodyLines.push("-------------------------------------");
+      bodyLines.push("");
+
+      fields.forEach((field) => {
+        const name = field.getAttribute("name") || "Question";
+        const label = formatLabel(name);
+        const value = field.value ? field.value : "(no response)";
+        bodyLines.push(label + ": " + value);
+      });
+
+      const bodyText = bodyLines.join("\n");
+      const subject = encodeURIComponent("New Dental AI Audit Submission");
+      const body = encodeURIComponent(bodyText);
+
+      const mailtoLink = `mailto:businessmogul2025@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+    }
+
+    function formatLabel(name) {
+      if (name === "practice_name") return "Practice Name";
+      if (name === "contact_name") return "Contact Name";
+      if (name === "contact_email") return "Contact Email";
+      if (name === "contact_phone") return "Contact Phone";
+      if (name === "contact_role") return "Role";
+      if (name === "additional_notes") return "Additional Notes";
+
+      // For other fields, turn p1_q1_visibility_level into "P1 Q1 Visibility Level"
+      let cleaned = name.replace(/_/g, " ");
+      cleaned = cleaned.replace(/p([1-5]) /i, "Pillar $1 ");
+      cleaned = cleaned.replace(/q([0-9]+)/i, "Question $1");
+      return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
+    }
+
+    // Initialize first step
+    goToStep(1);
+  </script>
 </body>
 </html>
